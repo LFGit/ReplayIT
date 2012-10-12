@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>ReplayITSc the Starcraft II replay center</title>
+<link rel="stylesheet" type="text/css" href="Styles/Style.css"/>
+</head>
+<body>
+  <div class="menu_bar">
+    <b>ReplayITSc</b>
+    <li> <font color="#FFFFFF">Upload</font> </li>
+    
+    <form action="Php_Scripts/Search.php" method="post">
+    
+      <!--<input type="text" name="search_by_player" class="menu_bar_search" value="Search replay by gamer" />
+      <input type="submit" name="submit_search" class="menu_bar_submit" value="Search" />-->
+      
+    </form>
+  </div>
+  
+  <div class="main_content">
+  </br>
+  <h3>Latest uploaded replays</h3>
+    <?php
+      require_once("Php_Scripts/Connection.php");
+      
+      if(connect_to_db()){
+	$query = "SELECT * FROM Pro_gamers;";
+	
+	$qry_result = mysql_query($query);
+	
+	if(mysql_num_rows($qry_result) > 0){
+	  while($data = mysql_fetch_assoc($qry_result)){
+	      
+	  }
+	}
+      }
+
+      
+    ?>
+  </div>
+  
+  <div class="site_footer">
+    <font size="1" color="#CCCCCC">Patterns from "link" </font>
+  </div>
+</body>
+</html>
